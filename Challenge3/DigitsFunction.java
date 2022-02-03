@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 
 public class DigitsFunction {
-
+	// formula for sum squared base
 	public static int calculateAnswer(int n, int b) {
 		int total = 0;
 		while (n > 0) {
@@ -13,7 +13,7 @@ public class DigitsFunction {
 		}
 		return total;
 	}
-	
+	# read in input and store in array
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
@@ -27,6 +27,7 @@ public class DigitsFunction {
 			String newAns = Integer.toString(answer);
 			answers[i] = newAns;
 		}
+		# loop through array to print answers
 		for (int i = 0; i < number; i++) {
 			System.out.println((i + 1) + " " + answers[i]);
 		}
