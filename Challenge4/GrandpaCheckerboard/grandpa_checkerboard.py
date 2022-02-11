@@ -5,7 +5,6 @@ import random
 
 DEBUG = 0
 
-data = sys.stdin.readlines()
 """
 cat gpa_1.txt | python3 grandpa_checkerboard.py
 4
@@ -19,12 +18,6 @@ cat gpa_3.txt | python3 grandpa_checkerboard.py
 cat gpa_4.txt | python3 grandpa_checkerboard.py
 """
 
-
-size_board = int(data[0].rstrip())
-board = []
-
-for i in range(1, size_board+1):
-    board.append(str(data[i].rstrip()))
 
 def columns_ok(board):
     for row in board:
@@ -61,9 +54,20 @@ def rows_ok(board, size_board):
         if W_count != B_count:
             return False
     return True
-if columns_ok(board): 
-    if rows_ok(board, size_board):
-        print("1")
-        quit()
-print("0")
-    
+
+def handleInput(board, size_board):
+    if DEBUG:
+        print("size_board: " + str(size_board))
+        print("board: " + str(board))
+    if columns_ok(board): 
+        if rows_ok(board, size_board):
+            return "1"
+    return "0"
+
+if __name__ == '__main__':
+    data = sys.stdin.readlines()
+    size_board = int(data[0].rstrip())
+    board = []
+    for i in range(1, size_board+1):
+        board.append(str(data[i].rstrip()))
+    print(handleInput(board, size_board))
