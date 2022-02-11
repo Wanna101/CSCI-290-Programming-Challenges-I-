@@ -5,7 +5,6 @@ import random
 
 DEBUG = 0
 
-data = sys.stdin.readlines()
 """
 cat knight_1.txt | python3 knights.py
 ...k.
@@ -18,14 +17,8 @@ cat knight_2.txt | python3 knights.py
 cat knight_3.txt | python3 knights.py
 """
 
-
-board = []
-
-for line in data:
-    board.append(line.rstrip())
-
-knights = []
 def check_valid_nine_knights(board):
+    knights = []
     for row in range(0, 5):
         for column in range(0, 5):
             if board[row][column] == 'k':
@@ -91,11 +84,16 @@ def check_valid_nine_knights(board):
                         return False
             #print(k1[0], k1[1])
     return True
-    
-if (check_valid_nine_knights(board)):
-    print("valid")
-else:
-    print("invalid")
-quit()
 
+def handleInput(board):
+    if (check_valid_nine_knights(board)):
+        return "valid"
+    else:
+        return "invalid"
 
+if __name__ == '__main__':
+    data = sys.stdin.readlines()
+    board = []
+    for line in data:
+        board.append(line.rstrip())
+    print(handleInput(board))
