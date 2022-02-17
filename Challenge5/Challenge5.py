@@ -25,7 +25,10 @@ def convertListToString(listID):
     return string
 
 def main():
-    string = input()
+    # print 1st line?
+    print("assign")
+    # or ask for first line?
+    # string = input()
     count = input()
     startingID = input()
 
