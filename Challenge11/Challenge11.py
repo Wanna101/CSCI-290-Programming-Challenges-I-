@@ -90,20 +90,25 @@ def assign(count, startingID):
 
 
 def defrag(dValue, programCounter):
+    # loop for input for the amount specified in programCounter
     arr = [input() for i in range(int(programCounter))]
-
+    
     groupCounter = {}
+    # split the dValue (it will only be two characters)
     parsed = split(dValue)
 
+    # put the split strings into variable names
     one = parsed[0]
     two = parsed[1]
 
+    # replace first and last values of each string in input with
+    # the split strings
     for i in range(int(programCounter)):
         temp = list(arr[i])
         temp[0] = one
         temp[len(arr[i]) - 1] = two
         
-        
+        # used in the groupCounter dictionary
         group = temp[2]
 
         if group not in groupCounter:
@@ -140,6 +145,6 @@ def main():
         programCounter = input()
         defrag(dValue, programCounter)
     else:
-        print("Not a value keyword")
+        print("Not a valid keyword")
 
 main()
