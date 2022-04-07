@@ -108,6 +108,9 @@ def defrag(dValue, programCounter):
         temp[0] = one
         temp[len(arr[i]) - 1] = two
         
+        # clear second value if you need to 
+        temp[1] = '0'
+        
         # used in the groupCounter dictionary
         group = temp[2]
 
