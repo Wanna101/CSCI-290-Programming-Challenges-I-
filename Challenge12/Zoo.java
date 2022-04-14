@@ -6,6 +6,7 @@
 			Scanner in = new Scanner(System.in);
 			// max amount of lists is 5
 			int numLists = 0;
+			int numAnimals = 0;
 
 			do {
 				// create new list and check items from input every time going through a list
@@ -13,7 +14,7 @@
 				Map<String, Integer> check = new HashMap<String, Integer>();
 
 				// read through the individual list and get number of Animals
-				int numAnimals = Integer.parseInt(in.nextLine());
+				numAnimals = Integer.parseInt(in.nextLine());
 				if (numAnimals == 0) {
 					break;
 				}
@@ -24,16 +25,17 @@
 					String[] animalName = in.nextLine().split(" ");
 					// program reads through lowercase (i.e. White tiger and Tiger is a count of two) so use toLower
 					// last word will be the type of animal so get last word
-					animalName[animalName.length - 1] = animalName[animalName.length - 1].toLowerCase();
+					String lastWord = animalName[animalName.length - 1];
+					lastWord = animalName[animalName.length - 1].toLowerCase();
 					// use map to check to see if it doesn't have animal yet
-					if (!check.containsKey(animalName[animalName.length - 1])) {
+					if (!check.containsKey(lastWord)) {
 						// add one to the animal type
-						check.put(animalName[animalName.length - 1], 1);
+						check.put(lastWord, 1);
 						// add animal to final list
-                    				finalList.add(animalName[animalName.length - 1]);
+                    				finalList.add(lastWord);
 					} else {
 						// add one to already instantiated type of animal
-						check.replace(animalName[animalName.length - 1], check.get(animalName[animalName.length - 1]) + 1);
+						check.replace(lastWord, check.get(lastWord + 1));
 					}
 				}
 				numLists++;
