@@ -35,7 +35,7 @@
                     				finalList.add(lastWord);
 					} else {
 						// add one to already instantiated type of animal
-						check.replace(lastWord, check.get(lastWord + 1));
+						check.replace(lastWord, check.get(lastWord) + 1);
 					}
 				}
 				numLists++;
