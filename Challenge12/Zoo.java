@@ -7,7 +7,7 @@
 			// max amount of lists is 5
 			int numLists = 0;
 
-			while (true) {
+			do {
 				// create new list and check items from input every time going through a list
 				ArrayList<String> finalList = new ArrayList<String>();
 				Map<String, Integer> check = new HashMap<String, Integer>();
@@ -30,7 +30,7 @@
 						// add one to the animal type
 						check.put(animalName[animalName.length - 1], 1);
 						// add animal to final list
-                    	finalList.add(animalName[animalName.length - 1]);
+                    				finalList.add(animalName[animalName.length - 1]);
 					} else {
 						// add one to already instantiated type of animal
 						check.replace(animalName[animalName.length - 1], check.get(animalName[animalName.length - 1]) + 1);
@@ -43,6 +43,6 @@
 				for (String animal: finalList) {
 					System.out.println(animal + " | " + check.get(animal));
 				}		
-			}
+			} while (numLists != 0);
 		}
 	}
