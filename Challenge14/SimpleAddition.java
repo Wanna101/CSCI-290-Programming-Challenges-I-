@@ -1,6 +1,8 @@
 import java.util.*;
 import java.math.*;
 
+// LINK: https://open.kattis.com/problems/simpleaddition
+
 public class SimpleAddition {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
