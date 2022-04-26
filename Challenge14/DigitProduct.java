@@ -1,6 +1,8 @@
 import java.util.*;
 import java.math.*;
 
+// LINK: https://open.kattis.com/problems/sifferprodukt
+
 public class DigitProduct {
 
 	public static String routine(String number) {
