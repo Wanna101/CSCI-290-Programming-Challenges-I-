@@ -1,6 +1,9 @@
 import java.util.*;
 import java.math.*;
 
+// LINK: https://open.kattis.com/problems/astrologicalsign
+
+
 public class AstrologicalSign {
 
 	public static String zodiac(String line) {
