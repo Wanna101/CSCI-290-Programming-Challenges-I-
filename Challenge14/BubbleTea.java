@@ -1,6 +1,8 @@
 import java.util.*;
 import java.math.*;
 
+// LINK: https://open.kattis.com/problems/bubbletea
+
 public class BubbleTea {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
